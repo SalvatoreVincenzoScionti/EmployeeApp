@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>Employee Management</h2>
+  <button type="button" class="create-button" [routerLink]="'create'">
+    Create New Employee
+  </button>
+
+  <div class="boxes-wrapper">
+    @for (emp of employeeList$ | async; track $index) {
+    <div class="employee-overview-box">
+      <div class="employee-data">
+        {{ emp.name }} | Started: {{ emp.startDate | date : 'MMMM dd, yyyy' }} |
+        {{ emp.salary }}€
+      </div>
+      <div class="buttons">
+        <app-button
+          [button]="employeeService.VIEW_BUTTON"
+          [_id]="emp._id"
+        ></app-button>
+        <app-button [button]="DELETE_BUTTON" [_id]="emp._id"></app-button>
+      </div>
+    </div>
+    }
+  </div>
+</div>

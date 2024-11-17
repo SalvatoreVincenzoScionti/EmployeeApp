@@ -1,0 +1,50 @@
+.create-button {
+  display: flex;
+  border: 1px solid var(--bg-primary);
+  color: var(--bg-primary);
+  background-color: var(--primary);
+  padding: 0.25rem;
+
+  font-weight: bold;
+  cursor: pointer;
+  //   width: 1.5rem;
+  //   height: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  transition: ease 0.2s;
+  &:hover {
+    background-color: var(--bg-primary);
+    color: var(--primary);
+  }
+}
+
+.boxes-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  row-gap: 0.5rem;
+  padding: 1rem 0;
+}
+
+.employee-overview-box {
+  display: flex;
+  align-items: center;
+  height: 2rem;
+  width: 80%;
+  box-shadow: 0 0 6px rgb(0 0 0 / 25%);
+  transition: all ease 0.3s;
+  justify-content: space-between;
+  &:hover {
+    // background-color: var(--bg-primary);
+    // color: var(--primary);
+    // cursor: pointer;
+  }
+}
+
+.buttons {
+  padding-right: 1rem;
+}
+
+.employee-data {
+  padding: 0 1rem;
+}

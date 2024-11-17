@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+@import './app/stylesheets/_variables';
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  color: var(--bg-dark);
+}
+
+.container {
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+
+  @media (min-width: 1360px) {
+    max-width: 1252px;
+  }
+}

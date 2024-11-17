@@ -1,0 +1,12 @@
+<div class="content container">
+  <h1>Employee Test Application</h1>
+  <div class="app-cards-wrapper">
+    @for (app of getAvailableAppData(); track $index) {
+    <app-card
+      [title]="app.name"
+      [isVisible]="app.isInProd"
+      [path]="app.path"
+    ></app-card>
+    }
+  </div>
+</div>

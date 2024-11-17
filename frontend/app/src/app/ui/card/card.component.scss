@@ -1,0 +1,37 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  height: 10rem;
+  width: 8rem;
+  text-align: center;
+  box-shadow: 0 0 36px rgba(0, 0, 0, 0.16);
+  transition: all ease 0.4s;
+  border-radius: 0.5rem;
+  background-color: var(--primary);
+  -webkit-user-select: none;
+  user-select: none;
+
+  &.hidden {
+    opacity: 0.5;
+    filter: blur(2px);
+  }
+
+  &:hover:not(.hidden) {
+    cursor: pointer;
+    transform: scale(1.03);
+    background-color: var(--bg-dark);
+    h2 {
+      color: var(--primary);
+    }
+  }
+}
+
+.tbd-banner {
+  background-color: var(--bg-dark);
+  color: var(--primary);
+}
+
+h2 {
+  font-size: 1rem;
+  padding: 1rem;
+}
