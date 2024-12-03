@@ -1,8 +1,22 @@
 <div class="container">
   <h3>Create Employee</h3>
   <div>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <app-form-input-field [inputType]="'text'"></app-form-input-field>
+    <form class="form-wrapper" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <app-form-input-field
+        [inputType]="'text'"
+        [title]="'Name'"
+        [control]="getFormControl('name')"
+      ></app-form-input-field>
+      <app-form-input-field
+        [inputType]="'number'"
+        [title]="'Salary'"
+        [control]="getFormControl('salary')"
+      ></app-form-input-field>
     </form>
+    <app-employee-button
+      (onClick)="onSubmit()"
+      [button]="this.empService.CREATE_BUTTON"
+      >create</app-employee-button
+    >
   </div>
 </div>

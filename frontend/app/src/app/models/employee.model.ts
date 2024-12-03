@@ -1,6 +1,5 @@
 export interface IEmployee {
-  _id: string;
+  _id?: string;
   name: string;
-  startDate: Date;
   salary: number;
 }

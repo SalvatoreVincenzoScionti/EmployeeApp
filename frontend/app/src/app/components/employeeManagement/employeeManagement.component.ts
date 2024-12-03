@@ -5,7 +5,6 @@ import {
   OnDestroy,
   OnInit,
 } from '@angular/core';
-import { error } from 'console';
 import { Subscription } from 'rxjs';
 import { ButtonMode } from 'src/app/enums/button-mode';
 import { IButton } from 'src/app/models/button.model';
@@ -18,7 +17,7 @@ import { EmployeeManagementService } from 'src/app/services/employee-management.
   styleUrl: './employeeManagement.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class EmployeeManagementComponent implements OnDestroy {
+export class EmployeeManagementComponent implements OnDestroy, OnInit {
   private _subs = new Subscription();
 
   public employeeService = inject(EmployeeManagementService);
@@ -29,16 +28,22 @@ export class EmployeeManagementComponent implements OnDestroy {
   public DELETE_BUTTON: IButton = {
     title: 'delete',
     buttonMode: ButtonMode.Delete,
-    onClick: (_id) => {
-      if (window.confirm('Are you sure you want to delete the entry?')) {
-        this._subs.add(
-          this.employeeService.delete(_id).subscribe((data) => {
-            console.log(data);
-          })
-        );
+    onClick: (emp) => {
+      if (emp?._id) {
+        if (window.confirm('Are you sure you want to delete the entry?')) {
+          this._subs.add(
+            this.employeeService.delete(emp._id).subscribe((data) => {
+              console.log(data);
+            })
+          );
+        }
       }
     },
   };
+
+  ngOnInit(): void {
+    this.employeeService.loadEmployeeList();
+  }
 
   ngOnDestroy(): void {
     this._subs.unsubscribe();

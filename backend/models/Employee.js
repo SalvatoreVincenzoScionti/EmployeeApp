@@ -5,10 +5,6 @@ const EmployeeSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  startDate: {
-    type: Date,
-    required: true,
-  },
   salary: {
     type: Number,
     required: true,

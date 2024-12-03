@@ -27,7 +27,7 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   try {
     const employee = new Employee(req.body);
-    const savedEmployee = employee.save();
+    const savedEmployee = await employee.save();
     res.status(200).json(savedEmployee);
   } catch (error) {
     res.status(500).json({ message: "An error ocurred", error: error });

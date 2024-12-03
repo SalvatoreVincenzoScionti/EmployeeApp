@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  input,
+} from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-form-input-field',
@@ -8,4 +14,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 })
 export class FormInputFieldComponent {
   inputType = input.required<string>();
+  title = input.required<string>();
+
+  @Input() control: FormControl = new FormControl();
 }

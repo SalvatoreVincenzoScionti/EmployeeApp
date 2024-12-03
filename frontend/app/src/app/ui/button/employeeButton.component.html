@@ -1,0 +1,6 @@
+<button
+  [class.delete]="button().buttonMode === buttonMode.Delete"
+  (click)="buttonClicked()"
+>
+  {{ button().title }}
+</button>

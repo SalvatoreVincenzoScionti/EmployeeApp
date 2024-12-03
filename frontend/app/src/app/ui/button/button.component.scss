@@ -8,7 +8,12 @@ button {
   &:hover {
     background-color: var(--bg-primary);
     color: var(--primary);
+    &.delete {
+      background-color: var(--delete);
+      color: var(--bg-dark);
+    }
   }
+  
 }
 // @include media-breakpoint-down(md) {
 //   padding: 1rem;

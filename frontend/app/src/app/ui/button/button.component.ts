@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ButtonMode } from 'src/app/enums/button-mode';
 import { IButton } from 'src/app/models/button.model';
 
 @Component({
@@ -9,5 +10,6 @@ import { IButton } from 'src/app/models/button.model';
 })
 export class ButtonComponent {
   button = input.required<IButton>();
-  _id = input.required<string>();
+
+  buttonMode = ButtonMode;
 }
